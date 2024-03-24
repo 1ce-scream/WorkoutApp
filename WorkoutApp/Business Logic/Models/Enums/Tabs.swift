@@ -5,7 +5,7 @@
 //  Created by Vitaliy Talalay on 24.03.2024.
 //
 
-import Foundation
+import class UIKit.UIImage
 
 enum Tabs: Int, CaseIterable {
     case overview, session, progress, settings
@@ -13,11 +13,10 @@ enum Tabs: Int, CaseIterable {
 
 extension Tabs {
     var title: String {
-        switch self {
-        case .overview: ""
-        case .session: ""
-        case .progress: ""
-        case .settings: ""
-        }
+        Resources.Strings.TabBar.title(for: self)
+    }
+    
+    var image: UIImage? {
+        Resources.Images.TabBar.icon(for: self)
     }
 }

@@ -8,5 +8,7 @@
 import Foundation
 
 enum Constraints {
-    
+    enum Common {
+        static let borderWidth: CGFloat = 1
+    }
 }
