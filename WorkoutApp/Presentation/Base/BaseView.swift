@@ -1,0 +1,31 @@
+//
+//  BaseView.swift
+//  WorkoutApp
+//
+//  Created by Vitaliy Talalay on 24.03.2024.
+//
+
+import UIKit
+
+class BaseView: UIView {
+    // MARK: Initializers
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+        constraintViews()
+        configureAppearance()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: Methods
+@objc extension BaseView {
+    func setupView() {}
+    func constraintViews() {}
+    func configureAppearance() {
+        backgroundColor = Resources.Colors.navigationBackground
+    }
+}
