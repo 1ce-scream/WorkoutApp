@@ -15,7 +15,8 @@
 		FE4AA79D2BB077960050D8CA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4AA79C2BB077960050D8CA /* TabBarController.swift */; };
 		FE4AA7A12BB0782C0050D8CA /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4AA7A02BB0782C0050D8CA /* Tabs.swift */; };
 		FE4AA7A32BB0789A0050D8CA /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4AA7A22BB0789A0050D8CA /* Resources.swift */; };
-		FE4AA7A52BB079980050D8CA /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4AA7A42BB079980050D8CA /* Constraints.swift */; };
+		FE4AA7A52BB079980050D8CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4AA7A42BB079980050D8CA /* Constants.swift */; };
+		FE53A8FD2BB0A69400E71F30 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE53A8FC2BB0A69400E71F30 /* SecondaryButton.swift */; };
 		FEE3F1C52BB0840D000753FD /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1C42BB0840D000753FD /* NavBarController.swift */; };
 		FEE3F1C72BB08492000753FD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1C62BB08492000753FD /* BaseView.swift */; };
 		FEE3F1C92BB085E0000753FD /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1C82BB085E0000753FD /* BaseController.swift */; };
@@ -38,7 +39,8 @@
 		FE4AA79C2BB077960050D8CA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		FE4AA7A02BB0782C0050D8CA /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		FE4AA7A22BB0789A0050D8CA /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
-		FE4AA7A42BB079980050D8CA /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		FE4AA7A42BB079980050D8CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FE53A8FC2BB0A69400E71F30 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		FEE3F1C42BB0840D000753FD /* NavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
 		FEE3F1C62BB08492000753FD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		FEE3F1C82BB085E0000753FD /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
@@ -123,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				FE4AA7A22BB0789A0050D8CA /* Resources.swift */,
-				FE4AA7A42BB079980050D8CA /* Constraints.swift */,
+				FE4AA7A42BB079980050D8CA /* Constants.swift */,
 				FE4AA78E2BB0703C0050D8CA /* LaunchScreen.storyboard */,
 				FE4AA78C2BB0703C0050D8CA /* Assets.xcassets */,
 				FE4AA7912BB0703C0050D8CA /* Info.plist */,
@@ -165,6 +167,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		FE53A8FB2BB0A66C00E71F30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE53A8FC2BB0A69400E71F30 /* SecondaryButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FEE3F1C32BB083F6000753FD /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +196,7 @@
 		FEE3F1CF2BB09619000753FD /* Overview */ = {
 			isa = PBXGroup;
 			children = (
+				FE53A8FB2BB0A66C00E71F30 /* Views */,
 				FE4AA7872BB0703B0050D8CA /* OverviewController.swift */,
 			);
 			path = Overview;
@@ -287,7 +298,8 @@
 			files = (
 				FE4AA7882BB0703B0050D8CA /* OverviewController.swift in Sources */,
 				FEE3F1D42BB09674000753FD /* SettingsController.swift in Sources */,
-				FE4AA7A52BB079980050D8CA /* Constraints.swift in Sources */,
+				FE4AA7A52BB079980050D8CA /* Constants.swift in Sources */,
+				FE53A8FD2BB0A69400E71F30 /* SecondaryButton.swift in Sources */,
 				FEE3F1C92BB085E0000753FD /* BaseController.swift in Sources */,
 				FEE3F1D82BB0968A000753FD /* SessionController.swift in Sources */,
 				FEE3F1D62BB0967F000753FD /* ProgressController.swift in Sources */,

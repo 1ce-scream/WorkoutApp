@@ -11,14 +11,17 @@ class BaseController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupViews()
+        setupConstraints()
         configureAppearance()
     }
 }
 
 // MARK: Methods
 @objc extension BaseController {
-    func setupView() {}
-    func constraintViews() {}
+    func setupViews() {}
+    func setupConstraints() {}
     func configureAppearance() {
         view.backgroundColor = Resources.Colors.background
     }

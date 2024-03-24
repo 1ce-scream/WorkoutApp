@@ -36,6 +36,10 @@ enum Resources {
                 static let progressRight = "Details"
             }
         }
+        
+        enum Overview {
+            static let allWorkoutsButton = "All Workouts"
+        }
     }
     
     enum Colors {
@@ -45,6 +49,7 @@ enum Resources {
         static let separator: UIColor = .init(hex: "#E8ECEF")
         static let titleGray: UIColor = .init(hex: "#545C77")
         static let background: UIColor = .init(hex: "#F8F9F9")
+        static let secondary: UIColor = .init(hex: "#F0F3FF")
     }
     
     enum Images {
@@ -58,6 +63,10 @@ enum Resources {
                 }
             }
         }
+        
+        enum Common {
+            static let arrowDown = UIImage(named: "arrow_down")
+        }
     }
     
     enum Fonts {
@@ -68,5 +77,6 @@ enum Resources {
     
     enum FontSizes {
         static let title: CGFloat = 17
+        static let main: CGFloat = 15
     }
 }

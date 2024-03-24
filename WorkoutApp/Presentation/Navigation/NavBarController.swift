@@ -26,7 +26,7 @@ final class NavBarController: UINavigationController {
         
         navigationBar.addBottomBorder(
             with: Resources.Colors.separator,
-            height: Constraints.Common.borderWidth
+            height: Constants.Common.borderWidth
         )
     }
 }

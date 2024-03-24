@@ -28,7 +28,7 @@ private extension TabBarController {
         tabBar.barTintColor = Resources.Colors.inactive
         tabBar.backgroundColor = Resources.Colors.navigationBackground
         tabBar.layer.borderColor = Resources.Colors.separator.cgColor
-        tabBar.layer.borderWidth = Constraints.Common.borderWidth
+        tabBar.layer.borderWidth = Constants.Common.borderWidth
         tabBar.layer.masksToBounds = true
     }
     

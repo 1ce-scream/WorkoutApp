@@ -11,8 +11,9 @@ class BaseView: UIView {
     // MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupView()
-        constraintViews()
+        
+        setupViews()
+        setupConstraints()
         configureAppearance()
     }
     
@@ -23,8 +24,8 @@ class BaseView: UIView {
 
 // MARK: Methods
 @objc extension BaseView {
-    func setupView() {}
-    func constraintViews() {}
+    func setupViews() {}
+    func setupConstraints() {}
     func configureAppearance() {
         backgroundColor = Resources.Colors.navigationBackground
     }
