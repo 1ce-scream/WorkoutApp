@@ -59,7 +59,7 @@ private extension SecondaryButton {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = Resources.Colors.active
         label.textAlignment = .center
-        label.font = Resources.Fonts.helveticaRegular(with: Resources.FontSizes.main)
+        label.font = Resources.Fonts.helveticaRegular(with: Constants.FontSizes.main)
         
         iconView.translatesAutoresizingMaskIntoConstraints = false
         iconView.image = Resources.Images.Common.arrowDown

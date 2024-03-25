@@ -9,14 +9,15 @@ import UIKit
 
 final class OverviewController: BaseController {
     // MARK: Private properties
-    private let allWorkoutsButton = SecondaryButton()
+    private let navBar = OverviewNavBar()
     
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = Resources.Strings.NavBar.overview
         navigationController?.tabBarItem.title = Resources.Strings.TabBar.title(for: .overview)
+        navBar.addAdditingAction(#selector(addButtonAction), with: self)
+        navBar.addAllWorkoutsAction(#selector(allWorkoutsButtonAction), with: self)
     }
 }
 
@@ -25,31 +26,33 @@ extension OverviewController {
     override func setupViews() {
         super.setupViews()
         
-        view.addSubview(allWorkoutsButton)
+        view.addViews(navBar)
     }
     
     override func setupConstraints() {
         super.setupConstraints()
         
         NSLayoutConstraint.activate([
-            allWorkoutsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            allWorkoutsButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            allWorkoutsButton.heightAnchor.constraint(equalToConstant: Constants.SecondaryButton.height),
-            allWorkoutsButton.widthAnchor.constraint(equalToConstant: Constants.SecondaryButton.width),
+            navBar.topAnchor.constraint(equalTo: view.topAnchor),
+            navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
     }
     
     override func configureAppearance() {
         super.configureAppearance()
         
-        allWorkoutsButton.translatesAutoresizingMaskIntoConstraints = false
-        allWorkoutsButton.setTitle(Resources.Strings.Overview.allWorkoutsButton)
-        allWorkoutsButton.addTarget(self, action: #selector(allWorkoutsButtonAction), for: .touchUpInside)
+        navigationController?.navigationBar.isHidden = true
     }
 }
 
+// MARK: Button actions
 @objc extension OverviewController {
     func allWorkoutsButtonAction() {
         print("All Workouts button tapped")
+    }
+    
+    func addButtonAction() {
+        print("Add button tapped")
     }
 }
