@@ -34,8 +34,10 @@ final class SecondaryButton: UIButton {
 // MARK: Configuration
 private extension SecondaryButton {
     func setupViews() {
-        addSubview(label)
-        addSubview(iconView)
+        addViews(
+            label,
+            iconView
+        )
     }
     
     func setupConstraints() {

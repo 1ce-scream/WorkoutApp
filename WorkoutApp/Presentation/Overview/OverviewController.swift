@@ -16,6 +16,11 @@ final class OverviewController: BaseController {
         super.viewDidLoad()
         
         navigationController?.tabBarItem.title = Resources.Strings.TabBar.title(for: .overview)
+        setupNavBarButtonActions()
+    }
+    
+    // MARK: Private methods
+    private func setupNavBarButtonActions() {
         navBar.addAdditingAction(#selector(addButtonAction), with: self)
         navBar.addAllWorkoutsAction(#selector(allWorkoutsButtonAction), with: self)
     }
@@ -47,7 +52,7 @@ extension OverviewController {
 }
 
 // MARK: Button actions
-@objc extension OverviewController {
+@objc private extension OverviewController {
     func allWorkoutsButtonAction() {
         print("All Workouts button tapped")
     }
