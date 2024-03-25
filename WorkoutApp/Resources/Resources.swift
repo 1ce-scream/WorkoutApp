@@ -66,6 +66,7 @@ enum Resources {
         
         enum Common {
             static let arrowDown = UIImage(named: "arrow_down")
+            static let addButton = UIImage(named: "add_button")
         }
     }
     
@@ -73,10 +74,5 @@ enum Resources {
         static func helveticaRegular(with size: CGFloat) -> UIFont {
             UIFont(name: "Helvetica", size: size) ?? UIFont()
         }
-    }
-    
-    enum FontSizes {
-        static let title: CGFloat = 17
-        static let main: CGFloat = 15
     }
 }

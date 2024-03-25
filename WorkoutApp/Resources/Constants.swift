@@ -12,6 +12,20 @@ enum Constants {
         static let borderWidth: CGFloat = 1
     }
     
+    enum FontSizes {
+        static let header: CGFloat = 22
+        static let title: CGFloat = 17
+        static let main: CGFloat = 15
+    }
+    
+    enum OverviewNavBar {
+        static let verticalPadding: CGFloat = 8
+        static let horizontalPadding: CGFloat = 15
+        static let addButtonHeight: CGFloat = 28
+        static let weekViewVerticalPadding: CGFloat = 15
+        static let weekViewHeight: CGFloat = 47
+    }
+    
     enum SecondaryButton {
         static let leading: CGFloat = 10
         static let trailing: CGFloat = -10

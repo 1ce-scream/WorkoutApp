@@ -17,6 +17,7 @@
 		FE4AA7A32BB0789A0050D8CA /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4AA7A22BB0789A0050D8CA /* Resources.swift */; };
 		FE4AA7A52BB079980050D8CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4AA7A42BB079980050D8CA /* Constants.swift */; };
 		FE53A8FD2BB0A69400E71F30 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE53A8FC2BB0A69400E71F30 /* SecondaryButton.swift */; };
+		FE9BCE2B2BB175D500AA5C94 /* OverviewNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BCE2A2BB175D500AA5C94 /* OverviewNavBar.swift */; };
 		FEE3F1C52BB0840D000753FD /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1C42BB0840D000753FD /* NavBarController.swift */; };
 		FEE3F1C72BB08492000753FD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1C62BB08492000753FD /* BaseView.swift */; };
 		FEE3F1C92BB085E0000753FD /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1C82BB085E0000753FD /* BaseController.swift */; };
@@ -41,6 +42,7 @@
 		FE4AA7A22BB0789A0050D8CA /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		FE4AA7A42BB079980050D8CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FE53A8FC2BB0A69400E71F30 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		FE9BCE2A2BB175D500AA5C94 /* OverviewNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewNavBar.swift; sourceTree = "<group>"; };
 		FEE3F1C42BB0840D000753FD /* NavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
 		FEE3F1C62BB08492000753FD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		FEE3F1C82BB085E0000753FD /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				FE53A8FC2BB0A69400E71F30 /* SecondaryButton.swift */,
+				FE9BCE2A2BB175D500AA5C94 /* OverviewNavBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				FE4AA7A12BB0782C0050D8CA /* Tabs.swift in Sources */,
 				FEE3F1CE2BB09433000753FD /* UIView+Ext.swift in Sources */,
 				FEE3F1C72BB08492000753FD /* BaseView.swift in Sources */,
+				FE9BCE2B2BB175D500AA5C94 /* OverviewNavBar.swift in Sources */,
 				FE4AA7862BB0703B0050D8CA /* SceneDelegate.swift in Sources */,
 				FEE3F1DA2BB09828000753FD /* NavBarPosition.swift in Sources */,
 				FEE3F1C52BB0840D000753FD /* NavBarController.swift in Sources */,

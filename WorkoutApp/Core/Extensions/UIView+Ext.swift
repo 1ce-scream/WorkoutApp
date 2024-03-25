@@ -45,4 +45,11 @@ extension UIView {
             self.alpha = Constants.ButtonsAnimation.alphaStart
         }
     }
+    
+    func addViews(_ views: UIView...) {
+        views.forEach { view in
+            addSubview(view)
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
 }
