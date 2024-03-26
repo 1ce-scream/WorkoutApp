@@ -50,6 +50,7 @@ enum Resources {
         static let titleGray: UIColor = .init(hex: "#545C77")
         static let background: UIColor = .init(hex: "#F8F9F9")
         static let secondary: UIColor = .init(hex: "#F0F3FF")
+        static let infoViewBackground: UIColor = .white
     }
     
     enum Images {
