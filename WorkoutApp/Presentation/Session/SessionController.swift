@@ -9,10 +9,7 @@ import UIKit
 
 final class SessionController: BaseController {
     // MARK: Private properties
-    private let timerView: BaseInfoView = {
-        let view = BaseInfoView(title: "Test", buttonTitle: "Test button".uppercased())
-        return view
-    }()
+    private let timerView: BaseInfoView = TimerView()
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -59,9 +56,9 @@ extension SessionController {
         super.setupConstraints()
         
         NSLayoutConstraint.activate([
-            timerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            timerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            timerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
+            timerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.Session.horizontalPadding),
+            timerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Session.horizontalPadding),
+            timerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.Session.verticalPadding),
             timerView.heightAnchor.constraint(equalToConstant: 300)
         ])
     }

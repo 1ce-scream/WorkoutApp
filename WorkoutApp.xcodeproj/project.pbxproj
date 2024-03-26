@@ -23,6 +23,8 @@
 		FE9BCE2E2BB187CA00AA5C94 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BCE2D2BB187CA00AA5C94 /* WeekView.swift */; };
 		FE9BCE302BB1895000AA5C94 /* WeekDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BCE2F2BB1895000AA5C94 /* WeekDayView.swift */; };
 		FE9BCE322BB196A600AA5C94 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BCE312BB196A600AA5C94 /* Date+Ext.swift */; };
+		FEBFE6C02BB2A3620086AAFC /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBFE6BF2BB2A3620086AAFC /* TimerView.swift */; };
+		FEBFE6C32BB2A4370086AAFC /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBFE6C22BB2A4370086AAFC /* ProgressView.swift */; };
 		FEE3F1C52BB0840D000753FD /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1C42BB0840D000753FD /* NavBarController.swift */; };
 		FEE3F1C72BB08492000753FD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1C62BB08492000753FD /* BaseView.swift */; };
 		FEE3F1C92BB085E0000753FD /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1C82BB085E0000753FD /* BaseController.swift */; };
@@ -53,6 +55,8 @@
 		FE9BCE2D2BB187CA00AA5C94 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		FE9BCE2F2BB1895000AA5C94 /* WeekDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayView.swift; sourceTree = "<group>"; };
 		FE9BCE312BB196A600AA5C94 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		FEBFE6BF2BB2A3620086AAFC /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		FEBFE6C22BB2A4370086AAFC /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		FEE3F1C42BB0840D000753FD /* NavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
 		FEE3F1C62BB08492000753FD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		FEE3F1C82BB085E0000753FD /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
@@ -209,6 +213,23 @@
 			path = WeekView;
 			sourceTree = "<group>";
 		};
+		FEBFE6BE2BB2A3400086AAFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FEBFE6C12BB2A4200086AAFC /* Timer */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FEBFE6C12BB2A4200086AAFC /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				FEBFE6BF2BB2A3620086AAFC /* TimerView.swift */,
+				FEBFE6C22BB2A4370086AAFC /* ProgressView.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
 		FEE3F1C32BB083F6000753FD /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +260,7 @@
 		FEE3F1D02BB09629000753FD /* Session */ = {
 			isa = PBXGroup;
 			children = (
+				FEBFE6BE2BB2A3400086AAFC /* Views */,
 				FEE3F1D72BB0968A000753FD /* SessionController.swift */,
 			);
 			path = Session;
@@ -336,11 +358,13 @@
 				FE53A8FD2BB0A69400E71F30 /* BaseButton.swift in Sources */,
 				FEE3F1C92BB085E0000753FD /* BaseController.swift in Sources */,
 				FEE3F1D82BB0968A000753FD /* SessionController.swift in Sources */,
+				FEBFE6C02BB2A3620086AAFC /* TimerView.swift in Sources */,
 				FE9BCE2E2BB187CA00AA5C94 /* WeekView.swift in Sources */,
 				FEE3F1D62BB0967F000753FD /* ProgressController.swift in Sources */,
 				FE4AA79D2BB077960050D8CA /* TabBarController.swift in Sources */,
 				FEE3F1CC2BB08C38000753FD /* UIColor+Ext.swift in Sources */,
 				FE4AA7842BB0703B0050D8CA /* AppDelegate.swift in Sources */,
+				FEBFE6C32BB2A4370086AAFC /* ProgressView.swift in Sources */,
 				FE4AA7A32BB0789A0050D8CA /* Resources.swift in Sources */,
 				FE9BCE322BB196A600AA5C94 /* Date+Ext.swift in Sources */,
 				FE4AA7A12BB0782C0050D8CA /* Tabs.swift in Sources */,

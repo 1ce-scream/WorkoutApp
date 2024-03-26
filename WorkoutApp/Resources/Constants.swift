@@ -47,4 +47,14 @@ enum Constants {
         static let alphaStart: CGFloat = 1
         static let alphaFinish: CGFloat = 0.55
     }
+    
+    enum Session {
+        static let horizontalPadding: CGFloat = 15
+        static let verticalPadding: CGFloat = 15
+        
+        enum Timer {
+            static let progressPadding: CGFloat = 40
+            static let progressWidth: CGFloat = 20
+        }
+    }
 }
