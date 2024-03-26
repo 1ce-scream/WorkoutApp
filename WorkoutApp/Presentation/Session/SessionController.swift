@@ -84,5 +84,11 @@ extension SessionController {
         addNavBarButton(at: .right, title: Resources.Strings.NavBar.Buttons.sessionFinish)
         
         timerView.configureTimer(duration: timerDuration, progress: 0)
+        timerView.onFinishTimerCallback = { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                self.navBarRightButtonHandler()
+            }
+        }
     }
 }
