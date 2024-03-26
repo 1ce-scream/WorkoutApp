@@ -9,14 +9,16 @@ import UIKit
 
 final class WeekView: BaseView {
     // MARK: Private properties
-    private let calendar = Calendar.autoupdatingCurrent
     private let stackView = UIStackView()
     
     // MARK: Private methods
     private func setupWeekdaysStack() {
-        var weekdays = calendar.shortStandaloneWeekdaySymbols
-        let sunday = weekdays.remove(at: 0)
-        weekdays.append(sunday)
+        var weekdays = Date.calendar.shortStandaloneWeekdaySymbols
+        
+        if Date.calendar.firstWeekday == 2 {
+            let sunday = weekdays.remove(at: 0)
+            weekdays.append(sunday)
+        }
         
         weekdays.enumerated().forEach { index, weekday in
             let view = WeekDayView()
