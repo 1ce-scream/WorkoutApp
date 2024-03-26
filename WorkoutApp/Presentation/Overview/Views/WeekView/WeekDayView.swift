@@ -56,7 +56,7 @@ extension WeekView.WeekDayView {
         layer.cornerRadius = Constants.OverviewNavBar.WeekView.cornerRadius
         layer.masksToBounds = true
         
-        nameLabel.font = Resources.Fonts.helveticaRegular(with: Constants.FontSizes.medium)
+        nameLabel.font = Resources.Fonts.helveticaRegular(with: Constants.FontSizes.small)
         nameLabel.textAlignment = .center
         
         dateLabel.font = Resources.Fonts.helveticaRegular(with: Constants.FontSizes.main)

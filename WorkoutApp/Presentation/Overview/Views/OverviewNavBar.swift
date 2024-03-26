@@ -10,7 +10,7 @@ import UIKit
 final class OverviewNavBar: BaseView {
     // MARK: Private properties
     private let titleLabel = UILabel()
-    private let allWorkoutsButton = SecondaryButton()
+    private let allWorkoutsButton = BaseButton(type: .secondary)
     private let addButton = UIButton()
     private let weekView = WeekView()
     
@@ -55,8 +55,7 @@ extension OverviewNavBar {
             
             allWorkoutsButton.topAnchor.constraint(equalTo: addButton.topAnchor),
             allWorkoutsButton.trailingAnchor.constraint(equalTo: addButton.leadingAnchor, constant: -Constants.OverviewNavBar.horizontalPadding),
-            allWorkoutsButton.heightAnchor.constraint(equalToConstant: Constants.SecondaryButton.height),
-            allWorkoutsButton.widthAnchor.constraint(equalToConstant: Constants.SecondaryButton.width),
+            allWorkoutsButton.heightAnchor.constraint(equalToConstant: Constants.OverviewNavBar.allWorkoutsButtonHeight),
             
             titleLabel.centerYAnchor.constraint(equalTo: allWorkoutsButton.centerYAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: allWorkoutsButton.leadingAnchor),
