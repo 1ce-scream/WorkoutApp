@@ -12,14 +12,18 @@ extension TimerView {
         func drawProgress(_ progress: CGFloat) {
             layer.sublayers?.removeAll()
             
+            let startSegment: CGFloat = 7 / 6
+            let endSegment: CGFloat = 8 / 6
+            let segment: CGFloat = 1 / 6
+            
             let circleFrame = UIScreen.main.bounds.width - (
                 Constants.Session.horizontalPadding + Constants.Session.Timer.progressPadding
             ) * 2
             
             let radius = circleFrame / 2
             let center = CGPoint(x: radius, y: radius)
-            let startAngle = -CGFloat.pi * 7 / 6
-            let endAngle = CGFloat.pi * 1 / 6
+            let startAngle = -CGFloat.pi * startSegment
+            let endAngle = CGFloat.pi * segment
             
             let circlePath = UIBezierPath(
                 arcCenter: center,
@@ -45,7 +49,7 @@ extension TimerView {
             circleLayer.fillColor = UIColor.clear.cgColor
             circleLayer.lineCap = .round
             
-            let dotAngle = CGFloat.pi * (7 / 6 - (8 / 6 * progress))
+            let dotAngle = CGFloat.pi * (startSegment - (endSegment * progress))
             let dotPoint = CGPoint(
                 x: cos(-dotAngle) * radius + center.x,
                 y: sin(-dotAngle) * radius + center.y
@@ -88,9 +92,9 @@ extension TimerView {
             barsLayer.lineWidth = Constants.Session.Timer.barsWidth
             
             let startBarRadius = barsRadius - barsLayer.lineWidth * 0.5
-            let endBarRadius = startBarRadius + 6
+            let endBarRadius = startBarRadius + barsLayer.lineWidth
             
-            var angle: CGFloat = 7 / 6
+            var angle: CGFloat = startSegment
             (1...9).forEach { _ in
                 let barAngle = CGFloat.pi * angle
                 let startBarPoint = CGPoint(
@@ -110,14 +114,14 @@ extension TimerView {
                 let barLayer = CAShapeLayer()
                 barLayer.path = barPath.cgPath
                 barLayer.fillColor = UIColor.clear.cgColor
-                barLayer.strokeColor = angle >= (7 / 6 - (8 / 6 * progress))
+                barLayer.strokeColor = angle >= (startSegment - (endSegment * progress))
                 ? Resources.Colors.active.cgColor : Resources.Colors.separator.cgColor
                 barLayer.lineCap = .round
-                barLayer.lineWidth = 4
+                barLayer.lineWidth = Constants.Session.Timer.barSegmentWidth
                 
                 barsLayer.addSublayer(barLayer)
                 
-                angle -= 1 / 6
+                angle -= segment
             }
             
             layer.addSublayer(defaultCircleLayer)
