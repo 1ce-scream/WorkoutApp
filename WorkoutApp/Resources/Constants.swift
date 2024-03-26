@@ -56,6 +56,8 @@ enum Constants {
             static let progressPadding: CGFloat = 40
             static let progressWidth: CGFloat = 20
             static let dotWidth: CGFloat = 8
+            static let barsWidth: CGFloat = 6
+            static let barsPadding: CGFloat = 25
         }
     }
 }
