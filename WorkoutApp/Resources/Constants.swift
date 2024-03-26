@@ -16,13 +16,15 @@ enum Constants {
         static let header: CGFloat = 22
         static let title: CGFloat = 17
         static let main: CGFloat = 15
-        static let medium: CGFloat = 9
+        static let medium: CGFloat = 13
+        static let small: CGFloat = 9
     }
     
     enum OverviewNavBar {
         static let verticalPadding: CGFloat = 8
         static let horizontalPadding: CGFloat = 15
         static let addButtonHeight: CGFloat = 28
+        static let allWorkoutsButtonHeight: CGFloat = 28
         static let weekViewVerticalPadding: CGFloat = 15
         static let weekViewHeight: CGFloat = 47
         
@@ -33,14 +35,11 @@ enum Constants {
         }
     }
     
-    enum SecondaryButton {
-        static let leading: CGFloat = 10
-        static let trailing: CGFloat = -10
+    enum BaseButton {
+        static let horizontalPadding: CGFloat = 10
         static let iconHeight: CGFloat = 5
         static let iconWidth: CGFloat = 10
         static let cornerRadius: CGFloat = 14
-        static let width: CGFloat = 130
-        static let height: CGFloat = 28
     }
     
     enum ButtonsAnimation {
