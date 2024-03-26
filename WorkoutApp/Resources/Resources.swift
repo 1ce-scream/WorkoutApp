@@ -30,8 +30,9 @@ enum Resources {
             static let settings: String = "Settings"
             
             enum Buttons {
-                static let sessionLeft = "Pause"
-                static let sessionRight = "Finish"
+                static let sessionStart = "Start"
+                static let sessionPause = "Pause"
+                static let sessionFinish = "Finish"
                 static let progressLeft = "Export"
                 static let progressRight = "Details"
             }
@@ -39,6 +40,11 @@ enum Resources {
         
         enum Overview {
             static let allWorkoutsButton = "All Workouts"
+        }
+        
+        enum Session {
+            static let elapsedTime = "Elapsed Time"
+            static let remainingTime = "Remaining Time"
         }
     }
     
