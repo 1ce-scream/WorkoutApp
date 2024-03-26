@@ -55,6 +55,7 @@ enum Constants {
         enum Timer {
             static let progressPadding: CGFloat = 40
             static let progressWidth: CGFloat = 20
+            static let dotWidth: CGFloat = 8
         }
     }
 }
