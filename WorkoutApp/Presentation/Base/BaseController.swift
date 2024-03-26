@@ -42,6 +42,7 @@ extension BaseController {
         button.setTitleColor(Resources.Colors.active, for: .normal)
         button.setTitleColor(Resources.Colors.inactive, for: .disabled)
         button.titleLabel?.font = Resources.Fonts.helveticaRegular(with: Constants.FontSizes.title)
+        button.titleLabel?.textAlignment = .left
         
         switch position {
         case .left:
@@ -50,6 +51,17 @@ extension BaseController {
         case .right:
             button.addTarget(self, action: #selector(navBarRightButtonHandler), for: .touchUpInside)
             navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+        }
+    }
+    
+    func setNavBarButtonTitle(_ title: String, at position: NavBarPosition) {
+        switch position {
+        case .left:
+            (navigationItem.leftBarButtonItem?.customView as? UIButton)?.setTitle(title, for: .normal)
+            (navigationItem.leftBarButtonItem?.customView as? UIButton)?.sizeToFit()
+        case .right:
+            (navigationItem.rightBarButtonItem?.customView as? UIButton)?.setTitle(title, for: .normal)
+            (navigationItem.leftBarButtonItem?.customView as? UIButton)?.sizeToFit()
         }
     }
 }
