@@ -14,10 +14,15 @@ final class TabBarController: UITabBarController {
         
         configureAppearance()
         configureControllers()
+        switchTo(tab: .session)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func switchTo(tab: Tabs) {
+        selectedIndex = tab.rawValue
     }
 }
 
