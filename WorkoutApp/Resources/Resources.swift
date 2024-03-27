@@ -55,6 +55,11 @@ enum Resources {
             static let totalSteps = "Total steps"
             static let stepsCounter = "Steps counter"
         }
+        
+        enum Progress {
+            static let dailyPerformance = "Daily Performance"
+            static let last7days = "Last 7 days"
+        }
     }
     
     enum Colors {

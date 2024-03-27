@@ -11,6 +11,7 @@ enum Constants {
     enum Common {
         static let borderWidth: CGFloat = 1
         static let cornerRadius: CGFloat = 5
+        static let horizontalPadding: CGFloat = 15
     }
     
     enum FontSizes {
@@ -59,6 +60,11 @@ enum Constants {
         static let titleBottomPadding: CGFloat = 10
     }
     
+    enum Bars {
+        static let horizontalPadding: CGFloat = 10
+        static let verticalPadding: CGFloat = 15
+    }
+    
     enum ButtonsAnimation {
         static let animationDuration: CGFloat = 0.15
         static let alphaStart: CGFloat = 1
@@ -66,7 +72,7 @@ enum Constants {
     }
     
     enum Session {
-        static let horizontalPadding: CGFloat = 15
+        static let horizontalPadding: CGFloat = Common.horizontalPadding
         static let verticalPadding: CGFloat = 15
         static let statsVerticalPadding: CGFloat = 10
         
@@ -91,5 +97,10 @@ enum Constants {
             static let stackSpacing: CGFloat = horizontalPadding
             static let imageWidth: CGFloat = 23
         }
+    }
+    
+    enum Progress {
+        static let verticalPadding: CGFloat = 10
+        static let dailyPerformaceHeightMultiplier: CGFloat = 0.68
     }
 }

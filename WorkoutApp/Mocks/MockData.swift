@@ -26,4 +26,14 @@ struct MockData {
         .init(value: "5k", title: "2/16", heightMultiplier: 0.6),
         .init(value: "6k", title: "2/17", heightMultiplier: 0.7),
     ]
+    
+    let dailyPerformanceItems: [BarView.BarItem] = [
+        .init(value: "1", title: "Mon", heightMultiplier: 0.2),
+        .init(value: "2", title: "Tue", heightMultiplier: 0.4),
+        .init(value: "3", title: "Wed", heightMultiplier: 0.6),
+        .init(value: "4", title: "Thu", heightMultiplier: 0.8),
+        .init(value: "5", title: "Fri", heightMultiplier: 1),
+        .init(value: "3", title: "Sat", heightMultiplier: 0.6),
+        .init(value: "2", title: "Sun", heightMultiplier: 0.4),
+    ]
 }
