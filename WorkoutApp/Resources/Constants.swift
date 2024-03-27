@@ -51,6 +51,14 @@ enum Constants {
         static let buttonHeight: CGFloat = 30
     }
     
+    enum BarView {
+        static let cornerRadius: CGFloat = 2.5
+        static let barWidth: CGFloat = 17
+        static let barTopPadding: CGFloat = 5
+        static let barMultiplier: CGFloat = 0.8
+        static let titleBottomPadding: CGFloat = 10
+    }
+    
     enum ButtonsAnimation {
         static let animationDuration: CGFloat = 0.15
         static let alphaStart: CGFloat = 1
