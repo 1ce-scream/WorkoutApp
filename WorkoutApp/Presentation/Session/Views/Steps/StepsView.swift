@@ -11,7 +11,7 @@ final class StepsView: BaseInfoView {
     // MARK: Private properties
     private let barsView = BarsView()
     
-    
+    // MARK: Methods
     func configure(with items: [BarView.BarItem]) {
         barsView.configure(with: items)
     }
@@ -28,14 +28,10 @@ extension StepsView {
         super.setupConstraints()
         
         NSLayoutConstraint.activate([
-            barsView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            barsView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            barsView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
-            barsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
+            barsView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.Bars.horizontalPadding),
+            barsView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.Bars.horizontalPadding),
+            barsView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.Bars.verticalPadding),
+            barsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.Bars.verticalPadding),
         ])
-    }
-    override func configureAppearance() {
-        super.configureAppearance()
-        
     }
 }

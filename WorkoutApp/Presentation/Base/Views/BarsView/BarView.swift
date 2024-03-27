@@ -36,7 +36,7 @@ final class BarView: BaseView {
         
         super.init(frame: .zero)
         
-        titleLabel.text = item.title
+        titleLabel.text = item.title.uppercased()
         valueLabel.text = item.value
     }
     
