@@ -20,6 +20,8 @@ enum Constants {
         static let small: CGFloat = 9
         static let elapsedTime: CGFloat = 14
         static let elapsedTimeValue: CGFloat = 46
+        static let percentsTitle: CGFloat = 23
+        static let percentsSubtitle: CGFloat = 10
     }
     
     enum OverviewNavBar {
@@ -62,6 +64,11 @@ enum Constants {
             static let barSegmentWidth: CGFloat = 4
             static let barsPadding: CGFloat = 25
             static let timeStackSpacing: CGFloat = 10
+            static let percentStackPadding: CGFloat = 28
+            static let percentStackSpacing: CGFloat = 25
+            static let percentStackHeight: CGFloat = 35
+            static let percentStackWidth: CGFloat = 175
+            static let percentViewStackSpacing: CGFloat = 5
         }
     }
 }

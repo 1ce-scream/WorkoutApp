@@ -26,6 +26,7 @@
 		FEBFE6C02BB2A3620086AAFC /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBFE6BF2BB2A3620086AAFC /* TimerView.swift */; };
 		FEBFE6C32BB2A4370086AAFC /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBFE6C22BB2A4370086AAFC /* ProgressView.swift */; };
 		FEBFE6C92BB2C60E0086AAFC /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBFE6C82BB2C60E0086AAFC /* TimerState.swift */; };
+		FEC9A95E2BB4442600532A39 /* PercentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9A95D2BB4442600532A39 /* PercentView.swift */; };
 		FEE3F1C52BB0840D000753FD /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1C42BB0840D000753FD /* NavBarController.swift */; };
 		FEE3F1C72BB08492000753FD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1C62BB08492000753FD /* BaseView.swift */; };
 		FEE3F1C92BB085E0000753FD /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3F1C82BB085E0000753FD /* BaseController.swift */; };
@@ -59,6 +60,7 @@
 		FEBFE6BF2BB2A3620086AAFC /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		FEBFE6C22BB2A4370086AAFC /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		FEBFE6C82BB2C60E0086AAFC /* TimerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
+		FEC9A95D2BB4442600532A39 /* PercentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentView.swift; sourceTree = "<group>"; };
 		FEE3F1C42BB0840D000753FD /* NavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
 		FEE3F1C62BB08492000753FD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		FEE3F1C82BB085E0000753FD /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				FEBFE6BF2BB2A3620086AAFC /* TimerView.swift */,
 				FEBFE6C22BB2A4370086AAFC /* ProgressView.swift */,
+				FEC9A95D2BB4442600532A39 /* PercentView.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 			files = (
 				FE4AA7882BB0703B0050D8CA /* OverviewController.swift in Sources */,
 				FEE3F1D42BB09674000753FD /* SettingsController.swift in Sources */,
+				FEC9A95E2BB4442600532A39 /* PercentView.swift in Sources */,
 				FE4AA7A52BB079980050D8CA /* Constants.swift in Sources */,
 				FE53A8FD2BB0A69400E71F30 /* BaseButton.swift in Sources */,
 				FEE3F1C92BB085E0000753FD /* BaseController.swift in Sources */,

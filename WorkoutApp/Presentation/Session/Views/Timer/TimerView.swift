@@ -52,11 +52,27 @@ final class TimerView: BaseInfoView {
         return label
     }()
     
-    private var timeStackView: UIStackView = {
+    private let timeStackView: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
         view.distribution = .fillProportionally
         view.spacing = Constants.Session.Timer.timeStackSpacing
+        return view
+    }()
+    
+    private let bottomStackView: UIStackView = {
+        let view = UIStackView()
+        view.distribution = .fillProportionally
+        view.spacing = Constants.Session.Timer.percentStackSpacing
+        return view
+    }()
+    
+    private let completedPercentView = PercentView()
+    private let remainingPercentView = PercentView()
+    
+    private let bottomSeparatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = Resources.Colors.separator
         return view
     }()
 }
@@ -66,16 +82,24 @@ extension TimerView {
     override func setupViews() {
         super.setupViews()
         
-        addViews(progressView, timeStackView)
+        addViews(
+            progressView,
+            timeStackView,
+            bottomStackView
+        )
         
         [
             elapsedTimeLabel,
             elapsedTimeValueLabel,
             remainingTimeLabel,
             remainingTimeValueLabel
-        ].forEach {
-            timeStackView.addArrangedSubview($0)
-        }
+        ].forEach(timeStackView.addArrangedSubview)
+        
+        [
+            completedPercentView,
+            bottomSeparatorView,
+            remainingPercentView
+        ].forEach(bottomStackView.addArrangedSubview)
     }
     override func setupConstraints() {
         super.setupConstraints()
@@ -85,10 +109,17 @@ extension TimerView {
             progressView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.Session.Timer.progressPadding),
             progressView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.Session.Timer.progressPadding),
             progressView.heightAnchor.constraint(equalTo: progressView.widthAnchor),
-            progressView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: Constants.Session.Timer.progressPadding),
+            progressView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.Session.Timer.progressPadding),
             
             timeStackView.centerXAnchor.constraint(equalTo: progressView.centerXAnchor),
             timeStackView.centerYAnchor.constraint(equalTo: progressView.centerYAnchor),
+            
+            bottomStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.Session.Timer.percentStackPadding),
+            bottomStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            bottomStackView.heightAnchor.constraint(equalToConstant: Constants.Session.Timer.percentStackHeight),
+            bottomStackView.widthAnchor.constraint(equalToConstant: Constants.Session.Timer.percentStackWidth),
+            
+            bottomSeparatorView.widthAnchor.constraint(equalToConstant: Constants.Common.borderWidth),
         ])
     }
     override func configureAppearance() {
@@ -103,10 +134,12 @@ extension TimerView {
         let tempCurrentProgress = progress > duration ? duration : progress
         let goalValueDivider = duration == 0 ? 1 : duration
         let progress = tempCurrentProgress / goalValueDivider
+        let roundedPercents = Int(round(progress * 100))
         
         elapsedTimeValueLabel.text = getDisplayedTime(from: Int(tempCurrentProgress))
         remainingTimeValueLabel.text = getDisplayedTime(from: Int(duration) - Int(tempCurrentProgress))
-        
+        completedPercentView.configure(with: Resources.Strings.Session.completedPercent, value: roundedPercents)
+        remainingPercentView.configure(with: Resources.Strings.Session.remainingPercent, value: 100 - roundedPercents)
         progressView.drawProgress(progress)
     }
     
@@ -136,7 +169,7 @@ extension TimerView {
         
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { [weak self] timer in
             guard let self = self else { return }
-            self.timerProgress -= 0.1
+            self.timerProgress -= self.timerDuration * 0.02
             if self.timerProgress <= 0 {
                 self.timerProgress = 0
                 timer.invalidate()

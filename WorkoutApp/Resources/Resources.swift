@@ -45,6 +45,8 @@ enum Resources {
         enum Session {
             static let elapsedTime = "Elapsed Time"
             static let remainingTime = "Remaining Time"
+            static let completedPercent = "Completed"
+            static let remainingPercent = "Remaining"
         }
     }
     
@@ -56,6 +58,7 @@ enum Resources {
         static let titleGray: UIColor = .init(hex: "#545C77")
         static let background: UIColor = .init(hex: "#F8F9F9")
         static let secondary: UIColor = .init(hex: "#F0F3FF")
+        static let subtitleGray: UIColor = .init(hex: "#D8D8D8")
         static let infoViewBackground: UIColor = .white
     }
     
