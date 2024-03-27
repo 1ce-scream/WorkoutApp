@@ -53,7 +53,7 @@ extension WeekView.WeekDayView {
     override func configureAppearance() {
         super.configureAppearance()
         
-        layer.cornerRadius = Constants.OverviewNavBar.WeekView.cornerRadius
+        layer.cornerRadius = Constants.Common.cornerRadius
         layer.masksToBounds = true
         
         nameLabel.font = Resources.Fonts.helveticaRegular(with: Constants.FontSizes.small)
