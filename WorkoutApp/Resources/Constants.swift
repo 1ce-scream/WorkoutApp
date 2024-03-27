@@ -10,6 +10,7 @@ import Foundation
 enum Constants {
     enum Common {
         static let borderWidth: CGFloat = 1
+        static let cornerRadius: CGFloat = 5
     }
     
     enum FontSizes {
@@ -34,7 +35,6 @@ enum Constants {
         
         enum WeekView {
             static let weekStackSpacing: CGFloat = 7
-            static let cornerRadius: CGFloat = 5
             static let weekdayStackSpacing: CGFloat = 3
         }
     }
@@ -46,6 +46,11 @@ enum Constants {
         static let cornerRadius: CGFloat = 14
     }
     
+    enum BaseInfoView {
+        static let titleOffset: CGFloat = 10
+        static let buttonHeight: CGFloat = 30
+    }
+    
     enum ButtonsAnimation {
         static let animationDuration: CGFloat = 0.15
         static let alphaStart: CGFloat = 1
@@ -55,6 +60,7 @@ enum Constants {
     enum Session {
         static let horizontalPadding: CGFloat = 15
         static let verticalPadding: CGFloat = 15
+        static let statsVerticalPadding: CGFloat = 10
         
         enum Timer {
             static let progressPadding: CGFloat = 40
@@ -69,6 +75,13 @@ enum Constants {
             static let percentStackHeight: CGFloat = 35
             static let percentStackWidth: CGFloat = 175
             static let percentViewStackSpacing: CGFloat = 5
+        }
+        
+        enum StatsView {
+            static let horizontalPadding: CGFloat = 15
+            static let verticalPadding: CGFloat = 10
+            static let stackSpacing: CGFloat = horizontalPadding
+            static let imageWidth: CGFloat = 23
         }
     }
 }

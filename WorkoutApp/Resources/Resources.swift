@@ -47,6 +47,13 @@ enum Resources {
             static let remainingTime = "Remaining Time"
             static let completedPercent = "Completed"
             static let remainingPercent = "Remaining"
+            
+            static let workoutStats = "Workout stats"
+            static let totalDistance = "Total distance"
+            static let avaragePace = "Avarage pace"
+            static let heartbeat = "Heart rate"
+            static let totalSteps = "Total steps"
+            static let stepsCounter = "Steps counter"
         }
     }
     
@@ -77,6 +84,13 @@ enum Resources {
         enum Common {
             static let arrowDown = UIImage(named: "arrow_down")
             static let addButton = UIImage(named: "add_button")
+        }
+        
+        enum Stats {
+            static let totalDistance = UIImage(named: "stats_totalDistance")
+            static let avaragePace = UIImage(named: "stats_avaragePace")
+            static let heartbeat = UIImage(named: "stats_heartbeat")
+            static let totalSteps = UIImage(named: "stats_totalSteps")
         }
     }
     
