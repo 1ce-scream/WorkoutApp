@@ -97,7 +97,7 @@ extension SessionController {
         addNavBarButton(at: .left, title: Resources.Strings.NavBar.Buttons.sessionStart)
         addNavBarButton(at: .right, title: Resources.Strings.NavBar.Buttons.sessionFinish)
         
-        timerView.configureTimer(duration: timerDuration, progress: 0)
+        timerView.configureTimer(duration: timerDuration, progress: MockData.shared.timerProgress)
         timerView.onFinishTimerCallback = { [weak self] in
             guard let self = self else { return }
             let delay: Int = 1
@@ -112,5 +112,7 @@ extension SessionController {
             .totalSteps(value: MockData.shared.totalSteps),
             .totalDistance(value: MockData.shared.totalDistance)
         ])
+        
+        stepsView.configure(with: MockData.shared.stepItems)
     }
 }

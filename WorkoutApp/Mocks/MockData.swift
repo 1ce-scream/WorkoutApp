@@ -19,4 +19,11 @@ struct MockData {
     let avarageDistance: String = "8'20''"
     let totalDistance: String = "8.25"
     let totalSteps: String = "7,682"
+    
+    let stepItems: [BarView.BarItem] = [
+        .init(value: "8k", title: "2/14", heightMultiplier: 1),
+        .init(value: "7k", title: "2/15", heightMultiplier: 0.8),
+        .init(value: "5k", title: "2/16", heightMultiplier: 0.6),
+        .init(value: "6k", title: "2/17", heightMultiplier: 0.7),
+    ]
 }
