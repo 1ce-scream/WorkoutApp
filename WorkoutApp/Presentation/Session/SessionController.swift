@@ -10,8 +10,9 @@ import UIKit
 final class SessionController: BaseController {
     // MARK: Private properties
     private let timerView: TimerView = TimerView()
-    private let timerDuration: Double = 3
-    
+    private let statsView: StatsView = StatsView(title: Resources.Strings.Session.workoutStats)
+    private let stepsView: StepsView = StepsView(title: Resources.Strings.Session.stepsCounter)
+    private let timerDuration: Double = MockData.shared.timerDuration
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -61,7 +62,11 @@ extension SessionController {
     override func setupViews() {
         super.setupViews()
         
-        view.addViews(timerView)
+        view.addViews(
+            timerView,
+            statsView,
+            stepsView
+        )
     }
     
     override func setupConstraints() {
@@ -70,7 +75,16 @@ extension SessionController {
         NSLayoutConstraint.activate([
             timerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.Session.horizontalPadding),
             timerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Session.horizontalPadding),
-            timerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.Session.verticalPadding)
+            timerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.Session.verticalPadding),
+            
+            statsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.Session.horizontalPadding),
+            statsView.topAnchor.constraint(equalTo: timerView.bottomAnchor, constant: Constants.Session.statsVerticalPadding),
+            statsView.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -(Constants.Session.horizontalPadding / 2)),
+            
+            stepsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Session.horizontalPadding),
+            stepsView.topAnchor.constraint(equalTo: timerView.bottomAnchor, constant: Constants.Session.statsVerticalPadding),
+            stepsView.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: Constants.Session.horizontalPadding / 2),
+            stepsView.heightAnchor.constraint(equalTo: statsView.heightAnchor),
         ])
     }
     
@@ -86,9 +100,17 @@ extension SessionController {
         timerView.configureTimer(duration: timerDuration, progress: 0)
         timerView.onFinishTimerCallback = { [weak self] in
             guard let self = self else { return }
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+            let delay: Int = 1
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(delay)) {
                 self.navBarRightButtonHandler()
             }
         }
+        
+        statsView.configure(with: [
+            .heartbeat(value: MockData.shared.heartRate),
+            .avaragePace(value: MockData.shared.avarageDistance),
+            .totalSteps(value: MockData.shared.totalSteps),
+            .totalDistance(value: MockData.shared.totalDistance)
+        ])
     }
 }
