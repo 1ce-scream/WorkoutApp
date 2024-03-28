@@ -65,6 +65,23 @@ enum Constants {
         static let verticalPadding: CGFloat = 15
     }
     
+    enum Charts {
+        static let yAxisBottomPadding: CGFloat = 12
+        static let xAxisTrailingPadding: CGFloat = 4
+        static let xAxisLeadingPadding: CGFloat = 8
+        static let chartTopPadding: CGFloat = 5
+        static let chartTrailngPadding: CGFloat = 5
+        static let chartBottomPadding: CGFloat = 17
+        static let chartLeadingPadding: CGFloat = 12
+        
+        enum Chart {
+            static let dashLineInterval: NSNumber = 3
+            static let dashLineWidth: NSNumber = 6
+            static let linewidth: CGFloat = 3
+            static let dotWidth: CGFloat = 10
+        }
+    }
+    
     enum ButtonsAnimation {
         static let animationDuration: CGFloat = 0.15
         static let alphaStart: CGFloat = 1
@@ -101,6 +118,8 @@ enum Constants {
     
     enum Progress {
         static let verticalPadding: CGFloat = 10
+        static let horizontalPadding: CGFloat = 15
         static let dailyPerformaceHeightMultiplier: CGFloat = 0.68
+        static let monthlyPerformanceHeightMultiplier: CGFloat = 1.06
     }
 }

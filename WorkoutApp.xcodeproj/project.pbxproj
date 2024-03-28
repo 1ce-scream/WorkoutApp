@@ -27,6 +27,12 @@
 		FE4AA7A32BB0789A0050D8CA /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4AA7A22BB0789A0050D8CA /* Resources.swift */; };
 		FE4AA7A52BB079980050D8CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4AA7A42BB079980050D8CA /* Constants.swift */; };
 		FE53A8FD2BB0A69400E71F30 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE53A8FC2BB0A69400E71F30 /* BaseButton.swift */; };
+		FE847C622BB5586D00716C30 /* MonthlyPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE847C612BB5586D00716C30 /* MonthlyPerformance.swift */; };
+		FE847C652BB55ACB00716C30 /* ChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE847C642BB55ACB00716C30 /* ChartsView.swift */; };
+		FE847C672BB55B1D00716C30 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE847C662BB55B1D00716C30 /* ChartData.swift */; };
+		FE847C692BB55D2D00716C30 /* YAxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE847C682BB55D2D00716C30 /* YAxisView.swift */; };
+		FE847C6B2BB5624D00716C30 /* XAxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE847C6A2BB5624D00716C30 /* XAxisView.swift */; };
+		FE847C6E2BB5A07900716C30 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE847C6D2BB5A07900716C30 /* ChartView.swift */; };
 		FE9BCE2B2BB175D500AA5C94 /* OverviewNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BCE2A2BB175D500AA5C94 /* OverviewNavBar.swift */; };
 		FE9BCE2E2BB187CA00AA5C94 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BCE2D2BB187CA00AA5C94 /* WeekView.swift */; };
 		FE9BCE302BB1895000AA5C94 /* WeekDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BCE2F2BB1895000AA5C94 /* WeekDayView.swift */; };
@@ -70,6 +76,12 @@
 		FE4AA7A22BB0789A0050D8CA /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		FE4AA7A42BB079980050D8CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FE53A8FC2BB0A69400E71F30 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		FE847C612BB5586D00716C30 /* MonthlyPerformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPerformance.swift; sourceTree = "<group>"; };
+		FE847C642BB55ACB00716C30 /* ChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsView.swift; sourceTree = "<group>"; };
+		FE847C662BB55B1D00716C30 /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
+		FE847C682BB55D2D00716C30 /* YAxisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAxisView.swift; sourceTree = "<group>"; };
+		FE847C6A2BB5624D00716C30 /* XAxisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisView.swift; sourceTree = "<group>"; };
+		FE847C6D2BB5A07900716C30 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		FE9BCE2A2BB175D500AA5C94 /* OverviewNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewNavBar.swift; sourceTree = "<group>"; };
 		FE9BCE2D2BB187CA00AA5C94 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		FE9BCE2F2BB1895000AA5C94 /* WeekDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayView.swift; sourceTree = "<group>"; };
@@ -114,6 +126,7 @@
 			children = (
 				FE01F5E12BB47935005A895B /* StatsItem.swift */,
 				FE01F5EB2BB48FC7005A895B /* BarItem.swift */,
+				FE847C662BB55B1D00716C30 /* ChartData.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -138,6 +151,7 @@
 		FE47969F2BB1ED630032359F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FE847C632BB55A9B00716C30 /* ChartsView */,
 				FE01F5E62BB48DCF005A895B /* BarsView */,
 				FEE3F1C62BB08492000753FD /* BaseView.swift */,
 				FE4796A02BB1ED750032359F /* BaseInfoView.swift */,
@@ -264,6 +278,33 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FE847C602BB5584300716C30 /* MonthlyPerformance */ = {
+			isa = PBXGroup;
+			children = (
+				FE847C612BB5586D00716C30 /* MonthlyPerformance.swift */,
+			);
+			path = MonthlyPerformance;
+			sourceTree = "<group>";
+		};
+		FE847C632BB55A9B00716C30 /* ChartsView */ = {
+			isa = PBXGroup;
+			children = (
+				FE847C642BB55ACB00716C30 /* ChartsView.swift */,
+				FE847C6C2BB5625B00716C30 /* Views */,
+			);
+			path = ChartsView;
+			sourceTree = "<group>";
+		};
+		FE847C6C2BB5625B00716C30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE847C682BB55D2D00716C30 /* YAxisView.swift */,
+				FE847C6A2BB5624D00716C30 /* XAxisView.swift */,
+				FE847C6D2BB5A07900716C30 /* ChartView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FE9BCE2C2BB187B000AA5C94 /* WeekView */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,17 +354,18 @@
 		FEDE985E2BB4A2E40091F100 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FEDE985F2BB4A3000091F100 /* Performance */,
+				FE847C602BB5584300716C30 /* MonthlyPerformance */,
+				FEDE985F2BB4A3000091F100 /* DailyPerformance */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		FEDE985F2BB4A3000091F100 /* Performance */ = {
+		FEDE985F2BB4A3000091F100 /* DailyPerformance */ = {
 			isa = PBXGroup;
 			children = (
 				FEDE98602BB4A3380091F100 /* DailyPerformanceView.swift */,
 			);
-			path = Performance;
+			path = DailyPerformance;
 			sourceTree = "<group>";
 		};
 		FEE3F1C32BB083F6000753FD /* Navigation */ = {
@@ -452,16 +494,21 @@
 				FE4AA7882BB0703B0050D8CA /* OverviewController.swift in Sources */,
 				FEE3F1D42BB09674000753FD /* SettingsController.swift in Sources */,
 				FEC9A95E2BB4442600532A39 /* PercentView.swift in Sources */,
+				FE847C692BB55D2D00716C30 /* YAxisView.swift in Sources */,
 				FE4AA7A52BB079980050D8CA /* Constants.swift in Sources */,
+				FE847C672BB55B1D00716C30 /* ChartData.swift in Sources */,
 				FE53A8FD2BB0A69400E71F30 /* BaseButton.swift in Sources */,
+				FE847C652BB55ACB00716C30 /* ChartsView.swift in Sources */,
 				FEE3F1C92BB085E0000753FD /* BaseController.swift in Sources */,
 				FEBFE6C92BB2C60E0086AAFC /* TimerState.swift in Sources */,
+				FE847C622BB5586D00716C30 /* MonthlyPerformance.swift in Sources */,
 				FEE3F1D82BB0968A000753FD /* SessionController.swift in Sources */,
 				FE01F5DF2BB478B3005A895B /* StepsView.swift in Sources */,
 				FEBFE6C02BB2A3620086AAFC /* TimerView.swift in Sources */,
 				FE9BCE2E2BB187CA00AA5C94 /* WeekView.swift in Sources */,
 				FEE3F1D62BB0967F000753FD /* ProgressController.swift in Sources */,
 				FE4AA79D2BB077960050D8CA /* TabBarController.swift in Sources */,
+				FE847C6E2BB5A07900716C30 /* ChartView.swift in Sources */,
 				FEDE98612BB4A3380091F100 /* DailyPerformanceView.swift in Sources */,
 				FE01F5E52BB4840D005A895B /* MockData.swift in Sources */,
 				FE01F5DA2BB46C75005A895B /* StatsView.swift in Sources */,
@@ -479,6 +526,7 @@
 				FE9BCE2B2BB175D500AA5C94 /* OverviewNavBar.swift in Sources */,
 				FE01F5EC2BB48FC7005A895B /* BarItem.swift in Sources */,
 				FE01F5E82BB48DE1005A895B /* BarsView.swift in Sources */,
+				FE847C6B2BB5624D00716C30 /* XAxisView.swift in Sources */,
 				FE4AA7862BB0703B0050D8CA /* SceneDelegate.swift in Sources */,
 				FE01F5DD2BB46CC4005A895B /* StatsItemView.swift in Sources */,
 				FE9BCE302BB1895000AA5C94 /* WeekDayView.swift in Sources */,
