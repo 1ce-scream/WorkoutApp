@@ -14,6 +14,11 @@ final class ProgressController: BaseController {
         buttonTitle: Resources.Strings.Progress.last7days
     )
     
+    private let monthlyPerformanceView = MonthlyPerformanceView(
+        title: Resources.Strings.Progress.monthlyPerformance,
+        buttonTitle: Resources.Strings.Progress.last10month
+    )
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +29,7 @@ final class ProgressController: BaseController {
     // MARK: Private methods
     private func setupButtonActions() {
         dailyPerformaceView.addButtonAction(#selector(dailyPerformaceButtonAction), with: self)
+        monthlyPerformanceView.addButtonAction(#selector(monthlyPerformaceButtonAction), with: self)
     }
 }
 
@@ -40,6 +46,10 @@ final class ProgressController: BaseController {
     func dailyPerformaceButtonAction() {
         print("Daily performance button tapped")
     }
+    
+    func monthlyPerformaceButtonAction() {
+        print("Monthly performance button tapped")
+    }
 }
 
 // MARK: Configuration
@@ -48,7 +58,8 @@ extension ProgressController {
         super.setupViews()
         
         view.addViews(
-            dailyPerformaceView
+            dailyPerformaceView,
+            monthlyPerformanceView
         )
     }
     
@@ -56,10 +67,15 @@ extension ProgressController {
         super.setupConstraints()
         
         NSLayoutConstraint.activate([
-            dailyPerformaceView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.Common.horizontalPadding),
-            dailyPerformaceView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Common.horizontalPadding),
+            dailyPerformaceView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.Progress.horizontalPadding),
+            dailyPerformaceView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Progress.horizontalPadding),
             dailyPerformaceView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.Progress.verticalPadding),
-            dailyPerformaceView.heightAnchor.constraint(equalTo: dailyPerformaceView.widthAnchor, multiplier: Constants.Progress.dailyPerformaceHeightMultiplier)
+            dailyPerformaceView.heightAnchor.constraint(equalTo: dailyPerformaceView.widthAnchor, multiplier: Constants.Progress.dailyPerformaceHeightMultiplier),
+            
+            monthlyPerformanceView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.Progress.horizontalPadding),
+            monthlyPerformanceView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Progress.horizontalPadding),
+            monthlyPerformanceView.topAnchor.constraint(equalTo: dailyPerformaceView.bottomAnchor, constant: Constants.Progress.verticalPadding),
+            monthlyPerformanceView.heightAnchor.constraint(equalTo: monthlyPerformanceView.widthAnchor, multiplier: Constants.Progress.monthlyPerformanceHeightMultiplier),
         ])
     }
     
@@ -73,5 +89,6 @@ extension ProgressController {
         addNavBarButton(at: .right, title: Resources.Strings.NavBar.Buttons.progressRight)
         
         dailyPerformaceView.configure(with: MockData.shared.dailyPerformanceItems)
+        monthlyPerformanceView.configure(with: MockData.shared.monthlyPerformanceData)
     }
 }

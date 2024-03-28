@@ -36,4 +36,17 @@ struct MockData {
         .init(value: "3", title: "Sat", heightMultiplier: 0.6),
         .init(value: "2", title: "Sun", heightMultiplier: 0.4),
     ]
+    
+    let monthlyPerformanceData: [ChartsView.Data] = [
+        .init(value: 45, title: "mar"),
+        .init(value: 55, title: "apr"),
+        .init(value: 60, title: "may"),
+        .init(value: 65, title: "jun"),
+        .init(value: 70, title: "jul"),
+        .init(value: 80, title: "aug"),
+        .init(value: 65, title: "sep"),
+        .init(value: 45, title: "okt"),
+        .init(value: 30, title: "nov"),
+        .init(value: 15, title: "dec"),
+    ]
 }
