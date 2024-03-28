@@ -34,8 +34,4 @@ extension DailyPerformanceView {
             barsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.Bars.verticalPadding),
         ])
     }
-    override func configureAppearance() {
-        super.configureAppearance()
-        
-    }
 }

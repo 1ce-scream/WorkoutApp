@@ -8,6 +8,7 @@
 import UIKit
 
 final class BarView: BaseView {
+    // MARK: Private properties
     private let heightMuliplier: Double
     
     private let valueLabel: UILabel = {
@@ -31,6 +32,7 @@ final class BarView: BaseView {
         return label
     }()
     
+    // MARK: Initializers
     init(item: BarItem) {
         self.heightMuliplier = item.heightMultiplier
         
@@ -46,6 +48,7 @@ final class BarView: BaseView {
     }
 }
 
+// MARK: Configuration
 extension BarView {
     override func setupViews() {
         super.setupViews()
@@ -71,9 +74,6 @@ extension BarView {
             titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
             titleLabel.topAnchor.constraint(equalTo: barView.bottomAnchor, constant: Constants.BarView.titleBottomPadding)
         ])
-    }
-    override func configureAppearance() {
-        super.configureAppearance()
     }
 }
 
