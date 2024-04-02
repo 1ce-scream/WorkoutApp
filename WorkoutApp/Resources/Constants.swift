@@ -122,4 +122,18 @@ enum Constants {
         static let dailyPerformaceHeightMultiplier: CGFloat = 0.68
         static let monthlyPerformanceHeightMultiplier: CGFloat = 1.06
     }
+    
+    enum Overview {
+        enum TrainingCell {
+            static let stackSpacing: CGFloat = 3
+            static let cornerRadius: CGFloat = 5
+            static let checkmarkHeight: CGFloat = 28
+            static let rightArrowHeight: CGFloat = 12
+            static let rightArrowWidth: CGFloat = 7
+            static let padding: CGFloat = 15
+        }
+        
+        static let trainingCellHeight: CGFloat = 70
+        static let cellHeaderHeight: CGFloat = 32
+    }
 }

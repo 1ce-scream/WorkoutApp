@@ -99,6 +99,12 @@ enum Resources {
             static let heartbeat = UIImage(named: "stats_heartbeat")
             static let totalSteps = UIImage(named: "stats_totalSteps")
         }
+        
+        enum Overview {
+            static let checkmark = UIImage(named: "checkmark")
+            static let oval = UIImage(named: "oval")
+            static let rightArrow = UIImage(named: "right_arrow")
+        }
     }
     
     enum Fonts {

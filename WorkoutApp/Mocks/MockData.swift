@@ -49,4 +49,29 @@ struct MockData {
         .init(value: 30, title: "nov"),
         .init(value: 15, title: "dec"),
     ]
+    
+    let trainingData: [TrainingData] = [
+        .init(
+            date: .now,
+            items: [
+                .init(title: "Warm Up Cardio", subtitle: "Stair Claimber * 10 minutes", isDone: true),
+                .init(title: "High Intensity Cardio", subtitle: "Treadmill * 50 minutes", isDone: false)
+            ]
+        ),
+        .init(
+            date: .now,
+            items: [
+                .init(title: "Warm Up Cardio", subtitle: "Treadmill * 10 minutes", isDone: true),
+                .init(title: "Chest Workout", subtitle: "Bench Press * 3 sets * 10 reps", isDone: false),
+                .init(title: "Tricep Workout", subtitle: "Overhead Extension * 5 sets * 8 reps", isDone: false)
+            ]
+        ),
+        .init(
+            date: .now,
+            items: [
+                .init(title: "Cardio Interval Workout", subtitle: "Treadmill * 60 minutes", isDone: true),
+                .init(title: "High Intensity Cardio", subtitle: "Treadmill * 50 minutes", isDone: false)
+            ]
+        ),
+    ]
 }
