@@ -14,7 +14,7 @@ final class TabBarController: UITabBarController {
         
         configureAppearance()
         configureControllers()
-        switchTo(tab: .progress)
+//        switchTo(tab: .progress)
     }
     
     required init?(coder: NSCoder) {
