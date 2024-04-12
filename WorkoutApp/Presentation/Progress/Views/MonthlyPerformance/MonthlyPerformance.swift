@@ -8,10 +8,12 @@
 import UIKit
 
 final class MonthlyPerformanceView: BaseInfoView {
-    // MARK: Private properties
+    // MARK: Views
     private let chartsView = ChartsView()
-    
-    // MARK: Methods
+}
+
+// MARK: Configuration
+extension MonthlyPerformanceView {
     func configure(
         with items: [ChartsView.Data],
         interval: Int = 10,
@@ -25,10 +27,7 @@ final class MonthlyPerformanceView: BaseInfoView {
             chartTopOffset: chartTopOffset
         )
     }
-}
-
-// MARK: Configuration
-extension MonthlyPerformanceView {
+    
     override func setupViews() {
         super.setupViews()
         
@@ -44,4 +43,5 @@ extension MonthlyPerformanceView {
             chartsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.Progress.horizontalPadding),
         ])
     }
+    override func configureAppearance() { super.configureAppearance() }
 }

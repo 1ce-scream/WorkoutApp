@@ -8,17 +8,16 @@
 import UIKit
 
 final class DailyPerformanceView: BaseInfoView {
-    // MARK: Private properties
+    // MARK: Views
     private let barsView = BarsView()
-    
-    // MARK: Methods
-    func configure(with items: [BarView.BarItem]) {
-        barsView.configure(with: items)
-    }
 }
 
 // MARK: Configuration
 extension DailyPerformanceView {
+    func configure(with items: [BarView.BarItem]) {
+        barsView.configure(with: items)
+    }
+    
     override func setupViews() {
         super.setupViews()
         
@@ -34,4 +33,5 @@ extension DailyPerformanceView {
             barsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.Bars.verticalPadding),
         ])
     }
+    override func configureAppearance() { super.configureAppearance() }
 }
