@@ -9,7 +9,7 @@ import UIKit
 
 extension TimerView {
     final class PercentView: BaseView {
-        // MARK: Private properties
+        // MARK: Views
         private let stackView: UIStackView = {
             let view = UIStackView()
             view.axis = .vertical
@@ -36,16 +36,13 @@ extension TimerView {
     }
 }
 
-// MARK: Methods
+// MARK: Configuration
 extension TimerView.PercentView {
     func configure(with title: String, value: Int) {
         subtitleLabel.text = title.uppercased()
         percentLabel.text = "\(value)%"
     }
-}
-
-// MARK: Configuration
-extension TimerView.PercentView {
+    
     override func setupViews() {
         super.setupViews()
         
@@ -63,4 +60,5 @@ extension TimerView.PercentView {
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
+    override func configureAppearance() { super.configureAppearance() }
 }

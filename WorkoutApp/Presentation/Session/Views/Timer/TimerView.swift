@@ -13,11 +13,12 @@ final class TimerView: BaseInfoView {
     var onFinishTimerCallback: (() -> Void)?
     
     // MARK: Private properties
-    private let progressView = ProgressView()
     private var timer = Timer()
     private var timerProgress: CGFloat = .zero
     private var timerDuration: Double = .zero
     
+    // MARK: Views
+    private let progressView = ProgressView()
     private let elapsedTimeLabel: UILabel = {
         let label = UILabel()
         label.text = Resources.Strings.Session.elapsedTime

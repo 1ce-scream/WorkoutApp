@@ -9,10 +9,12 @@ import UIKit
 
 final class SessionController: BaseController {
     // MARK: Private properties
+    private let timerDuration: Double = MockData.shared.timerDuration
+    
+    // MARK: Views
     private let timerView: TimerView = TimerView()
     private let statsView: StatsView = StatsView(title: Resources.Strings.Session.workoutStats)
     private let stepsView: StepsView = StepsView(title: Resources.Strings.Session.stepsCounter)
-    private let timerDuration: Double = MockData.shared.timerDuration
     
     // MARK: Lifecycle
     override func viewDidLoad() {

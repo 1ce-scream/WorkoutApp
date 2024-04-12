@@ -8,7 +8,7 @@
 import UIKit
 
 final class StatsItemView: BaseView {
-    // MARK: Private properties
+    // MARK: Views
     private let imageView = UIImageView()
     
     private let valueLabel: UILabel = {
@@ -34,6 +34,12 @@ final class StatsItemView: BaseView {
 
 // MARK: Configuration
 extension StatsItemView {
+    func configure(with item: StatsItem) {
+        imageView.image = item.image
+        titleLabel.text = item.title.uppercased()
+        valueLabel.text = item.value
+    }
+    
     override func setupViews() {
         super.setupViews()
         
@@ -59,13 +65,5 @@ extension StatsItemView {
             
         ])
     }
-}
-
-// MARK: Methods
-extension StatsItemView {
-    func configure(with item: StatsItem) {
-        imageView.image = item.image
-        titleLabel.text = item.title.uppercased()
-        valueLabel.text = item.value
-    }
+    override func configureAppearance() { super.configureAppearance() }
 }

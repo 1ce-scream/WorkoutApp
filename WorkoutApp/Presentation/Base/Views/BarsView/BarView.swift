@@ -77,6 +77,6 @@ extension BarView {
         ])
     }
     
-    override func configureAppearance() { }
+    override func configureAppearance() { super.configureAppearance() }
 }
 

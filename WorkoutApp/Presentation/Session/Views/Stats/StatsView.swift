@@ -8,7 +8,7 @@
 import UIKit
 
 final class StatsView: BaseInfoView {
-    // MARK: Private properties
+    // MARK: Views
     private let stackView: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
@@ -16,8 +16,10 @@ final class StatsView: BaseInfoView {
         view.distribution = .fillEqually
         return view
     }()
-    
-    // MARK: Methods
+}
+
+// MARK: Configuration
+extension StatsView {
     func configure(with items: [StatsItemView.StatsItems]) {
         items.forEach {
             let itemView = StatsItemView()
@@ -25,10 +27,7 @@ final class StatsView: BaseInfoView {
             stackView.addArrangedSubview(itemView)
         }
     }
-}
-
-// MARK: Configuration
-extension StatsView {
+    
     override func setupViews() {
         super.setupViews()
         
@@ -44,4 +43,5 @@ extension StatsView {
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.Session.StatsView.verticalPadding),
         ])
     }
+    override func configureAppearance() { super.configureAppearance() }
 }
