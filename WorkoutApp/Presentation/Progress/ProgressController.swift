@@ -8,7 +8,7 @@
 import UIKit
 
 final class ProgressController: BaseController {
-    // MARK: Private properties
+    // MARK: Views
     private let dailyPerformaceView = DailyPerformanceView(
         title: Resources.Strings.Progress.dailyPerformance,
         buttonTitle: Resources.Strings.Progress.last7days
@@ -18,6 +18,15 @@ final class ProgressController: BaseController {
         title: Resources.Strings.Progress.monthlyPerformance,
         buttonTitle: Resources.Strings.Progress.last10month
     )
+    
+    private let scrollView: UIScrollView = {
+        let view = UIScrollView()
+        view.showsVerticalScrollIndicator = true
+        view.alwaysBounceVertical = true
+        return view
+    }()
+    
+    private let scrollContent = UIView()
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -57,7 +66,9 @@ extension ProgressController {
     override func setupViews() {
         super.setupViews()
         
-        view.addViews(
+        view.addViews(scrollView)
+        scrollView.addViews(scrollContent)
+        scrollContent.addViews(
             dailyPerformaceView,
             monthlyPerformanceView
         )
@@ -67,15 +78,27 @@ extension ProgressController {
         super.setupConstraints()
         
         NSLayoutConstraint.activate([
-            dailyPerformaceView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.Progress.horizontalPadding),
-            dailyPerformaceView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Progress.horizontalPadding),
-            dailyPerformaceView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.Progress.verticalPadding),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            scrollContent.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            scrollContent.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            scrollContent.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            scrollContent.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            scrollContent.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            
+            dailyPerformaceView.leadingAnchor.constraint(equalTo: scrollContent.leadingAnchor, constant: Constants.Progress.horizontalPadding),
+            dailyPerformaceView.trailingAnchor.constraint(equalTo: scrollContent.trailingAnchor, constant: -Constants.Progress.horizontalPadding),
+            dailyPerformaceView.topAnchor.constraint(equalTo: scrollContent.topAnchor, constant: Constants.Progress.verticalPadding),
             dailyPerformaceView.heightAnchor.constraint(equalTo: dailyPerformaceView.widthAnchor, multiplier: Constants.Progress.dailyPerformaceHeightMultiplier),
             
-            monthlyPerformanceView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.Progress.horizontalPadding),
-            monthlyPerformanceView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Progress.horizontalPadding),
+            monthlyPerformanceView.leadingAnchor.constraint(equalTo: scrollContent.leadingAnchor, constant: Constants.Progress.horizontalPadding),
+            monthlyPerformanceView.trailingAnchor.constraint(equalTo: scrollContent.trailingAnchor, constant: -Constants.Progress.horizontalPadding),
             monthlyPerformanceView.topAnchor.constraint(equalTo: dailyPerformaceView.bottomAnchor, constant: Constants.Progress.verticalPadding),
             monthlyPerformanceView.heightAnchor.constraint(equalTo: monthlyPerformanceView.widthAnchor, multiplier: Constants.Progress.monthlyPerformanceHeightMultiplier),
+            monthlyPerformanceView.bottomAnchor.constraint(equalTo: scrollContent.bottomAnchor)
         ])
     }
     
