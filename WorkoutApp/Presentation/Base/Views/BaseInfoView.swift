@@ -8,7 +8,7 @@
 import UIKit
 
 class BaseInfoView: BaseView {
-    // MARK: Properties
+    // MARK: Views
     let contentView: UIView = {
         let view = UIView()
         view.backgroundColor = Resources.Colors.infoViewBackground
@@ -18,7 +18,6 @@ class BaseInfoView: BaseView {
         return view
     }()
     
-    // MARK: Private properties
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = Resources.Fonts.helveticaRegular(with: Constants.FontSizes.medium)

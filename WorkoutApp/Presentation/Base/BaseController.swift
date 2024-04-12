@@ -18,7 +18,7 @@ class BaseController: UIViewController {
     }
 }
 
-// MARK: Methods
+// MARK: Configuration methods
 @objc extension BaseController {
     func setupViews() {}
     func setupConstraints() {}

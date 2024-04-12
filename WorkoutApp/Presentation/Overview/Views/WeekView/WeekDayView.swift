@@ -9,29 +9,28 @@ import UIKit
 
 extension WeekView {
     final class WeekDayView: BaseView {
-        // MARK: Private properties
+        // MARK: Views
         private let nameLabel = UILabel()
         private let dateLabel = UILabel()
         private let stackView = UIStackView()
-        
-        // MARK: Methods
-        func configure(with index: Int, and name: String) {
-            let startOfWeek = Date().startOfWeek
-            let currentDay = startOfWeek.agoForward(to: index)
-            let day = Date.calendar.component(.day, from: currentDay)
-            let isToday = currentDay.stripTime() == Date().stripTime()
-            
-            backgroundColor = isToday ? Resources.Colors.active : Resources.Colors.background
-            nameLabel.text = name.uppercased()
-            nameLabel.textColor = isToday ? Resources.Colors.navigationBackground : Resources.Colors.inactive
-            dateLabel.text = "\(day)"
-            dateLabel.textColor = isToday ? Resources.Colors.navigationBackground : Resources.Colors.inactive
-        }
     }
 }
 
 // MARK: Configuration
 extension WeekView.WeekDayView {
+    func configure(with index: Int, and name: String) {
+        let startOfWeek = Date().startOfWeek
+        let currentDay = startOfWeek.agoForward(to: index)
+        let day = Date.calendar.component(.day, from: currentDay)
+        let isToday = currentDay.stripTime() == Date().stripTime()
+        
+        backgroundColor = isToday ? Resources.Colors.active : Resources.Colors.background
+        nameLabel.text = name.uppercased()
+        nameLabel.textColor = isToday ? Resources.Colors.navigationBackground : Resources.Colors.inactive
+        dateLabel.text = "\(day)"
+        dateLabel.textColor = isToday ? Resources.Colors.navigationBackground : Resources.Colors.inactive
+    }
+    
     override func setupViews() {
         super.setupViews()
         

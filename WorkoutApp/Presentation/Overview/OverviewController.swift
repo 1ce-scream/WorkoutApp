@@ -9,6 +9,9 @@ import UIKit
 
 final class OverviewController: BaseController {
     // MARK: Private properties
+    private var dataSource: [TrainingData] = []
+    
+    // MARK: Views
     private let navBar = OverviewNavBar()
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -18,8 +21,6 @@ final class OverviewController: BaseController {
         view.backgroundColor = .clear
         return view
     }()
-    
-    private var dataSource: [TrainingData] = []
     
     // MARK: Lifecycle
     override func viewDidLoad() {

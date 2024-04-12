@@ -11,6 +11,7 @@ final class BarView: BaseView {
     // MARK: Private properties
     private let heightMuliplier: Double
     
+    // MARK: Views
     private let valueLabel: UILabel = {
         let label = UILabel()
         label.font = Resources.Fonts.helveticaRegular(with: Constants.FontSizes.medium)
@@ -75,5 +76,7 @@ extension BarView {
             titleLabel.topAnchor.constraint(equalTo: barView.bottomAnchor, constant: Constants.BarView.titleBottomPadding)
         ])
     }
+    
+    override func configureAppearance() { }
 }
 

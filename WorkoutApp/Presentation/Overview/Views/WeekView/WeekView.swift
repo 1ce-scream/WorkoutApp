@@ -8,7 +8,7 @@
 import UIKit
 
 final class WeekView: BaseView {
-    // MARK: Private properties
+    // MARK: Views
     private let stackView = UIStackView()
     
     // MARK: Private methods

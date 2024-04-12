@@ -8,7 +8,7 @@
 import UIKit
 
 final class OverviewNavBar: BaseView {
-    // MARK: Private properties
+    // MARK: Views
     private let titleLabel = UILabel()
     private let allWorkoutsButton = BaseButton(type: .secondary)
     private let addButton = UIButton()

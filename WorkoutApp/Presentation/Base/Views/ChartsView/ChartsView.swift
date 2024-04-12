@@ -8,12 +8,14 @@
 import UIKit
 
 final class ChartsView: BaseView {
-    // MARK: Private properties
+    // MARK: Views
     private let yAxisView = YAxisView()
     private let xAxisView = XAxisView()
     private let chartView = ChartView()
-    
-    // MARK: Methods
+}
+
+// MARK: Configuration
+extension ChartsView {
     func configure(
         with data: [ChartsView.Data],
         interval: Int,
@@ -24,10 +26,7 @@ final class ChartsView: BaseView {
         xAxisView.configure(with: data)
         chartView.configure(with: data, linesCount: linesCount, chartTopOffset: chartTopOffset)
     }
-}
-
-// MARK: Configuration
-extension ChartsView {
+    
     override func setupViews() {
         super.setupViews()
         

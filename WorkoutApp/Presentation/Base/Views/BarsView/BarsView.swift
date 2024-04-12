@@ -8,24 +8,23 @@
 import UIKit
 
 final class BarsView: BaseView {
-    // MARK: Private properties
+    // MARK: Views
     private let stackView: UIStackView = {
         let view = UIStackView()
         view.distribution = .fillEqually
         return view
     }()
-    
-    // MARK: Methods
+}
+
+// MARK: Configuration
+extension BarsView {
     func configure(with data: [BarView.BarItem]) {
         data.forEach {
             let barView = BarView(item: $0)
             stackView.addArrangedSubview(barView)
         }
     }
-}
-
-// MARK: Configuration
-extension BarsView {
+    
     override func setupViews() {
         super.setupViews()
         

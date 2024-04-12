@@ -8,8 +8,10 @@
 import UIKit
 
 final class TrainingCell: UICollectionViewCell {
+    // MARK: Static properties
     static let id = "TrainingCellView"
     
+    // MARK: Views
     private let checkmarkView = UIImageView(image: Resources.Images.Overview.oval)
     
     private let stackView: UIStackView = {
@@ -35,6 +37,7 @@ final class TrainingCell: UICollectionViewCell {
     
     private let rightArrowView = UIImageView(image: Resources.Images.Overview.rightArrow)
     
+    // MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -50,7 +53,10 @@ final class TrainingCell: UICollectionViewCell {
         setupConstraints()
         configureAppearance()
     }
-    
+}
+
+// MARK: Configuration
+extension TrainingCell {
     func configure(with title: String, subtitle: String, isDone: Bool, _ roundedType: CellRoundedType) {
         titleLabel.text = title
         subtitleLabel.text = subtitle
@@ -63,15 +69,12 @@ final class TrainingCell: UICollectionViewCell {
             self.roundCorners([.bottomLeft, .bottomRight], radius: Constants.Overview.TrainingCell.cornerRadius)
         case .all:
             self.roundCorners(.allCorners, radius: Constants.Overview.TrainingCell.cornerRadius)
-        case .notRounded: 
+        case .notRounded:
             self.roundCorners(.allCorners, radius: .zero)
         }
     }
-}
-
-// MARK: Configuration
-private extension TrainingCell {
-    func setupViews() {
+    
+    private func setupViews() {
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(subtitleLabel)
         addViews(
@@ -80,7 +83,7 @@ private extension TrainingCell {
             rightArrowView
         )
     }
-    func setupConstraints() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             checkmarkView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.Overview.TrainingCell.padding),
             checkmarkView.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -97,13 +100,9 @@ private extension TrainingCell {
             rightArrowView.widthAnchor.constraint(equalToConstant: Constants.Overview.TrainingCell.rightArrowWidth),
         ])
     }
-    func configureAppearance() {
+    private func configureAppearance() {
         backgroundColor = Resources.Colors.navigationBackground
         layer.borderWidth = Constants.Common.borderWidth
         layer.borderColor = Resources.Colors.separator.cgColor
     }
-}
-
-enum CellRoundedType {
-    case top, bottom, all, notRounded
 }

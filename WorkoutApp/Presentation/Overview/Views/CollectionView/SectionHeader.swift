@@ -8,8 +8,10 @@
 import UIKit
 
 final class SectionHeader: UICollectionReusableView {
+    // MARK: Static properties
     static let id = "SectionHeader"
     
+    // MARK: Views
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = Resources.Fonts.helveticaRegular(with: Constants.FontSizes.medium)
@@ -18,6 +20,7 @@ final class SectionHeader: UICollectionReusableView {
         return label
     }()
     
+    // MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -33,25 +36,25 @@ final class SectionHeader: UICollectionReusableView {
         setupConstraints()
         configureAppearance()
     }
-    
+}
+
+// MARK: Configuration
+extension SectionHeader {
     func configure(with date: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM dd"
         
         titleLabel.text = dateFormatter.string(from: date).uppercased()
     }
-}
-
-// MARK: Configuration
-private extension SectionHeader {
-    func setupViews() {
+    
+    private func setupViews() {
         addViews(titleLabel)
     }
-    func setupConstraints() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
-    func configureAppearance() { }
+    private func configureAppearance() { }
 }

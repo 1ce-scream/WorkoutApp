@@ -11,6 +11,8 @@ final class BaseButton: UIButton {
     // MARK: Private properties
     private var type: BaseButtonType = .primary
     private var title: String?
+    
+    // MARK: Views
     private let label: UILabel = .init()
     private let iconView: UIImageView = .init()
     

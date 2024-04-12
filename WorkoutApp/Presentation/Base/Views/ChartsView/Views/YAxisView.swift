@@ -8,15 +8,17 @@
 import UIKit
 
 final class YAxisView: BaseView {
-    // MARK: Private properties
+    // MARK: Views
     private let stackView: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
         view.distribution = .equalSpacing
         return view
     }()
-    
-    // MARK: Methods
+}
+
+// MARK: Configuration
+extension YAxisView {
     func configure(with data: [ChartsView.Data], by interval: Int) {
         stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         
@@ -30,10 +32,7 @@ final class YAxisView: BaseView {
             stackView.addArrangedSubview(label)
         }
     }
-}
-
-// MARK: Configuration
-extension YAxisView {
+    
     override func setupViews() {
         super.setupViews()
         

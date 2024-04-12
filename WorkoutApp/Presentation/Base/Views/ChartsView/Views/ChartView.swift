@@ -8,7 +8,7 @@
 import UIKit
 
 final class ChartView: BaseView {
-    // MARK: Private properties
+    // MARK: Views
     private let yAxisSeparator: UIView = {
         let view = UIView()
         view.backgroundColor = Resources.Colors.separator
@@ -20,17 +20,16 @@ final class ChartView: BaseView {
         view.backgroundColor = Resources.Colors.separator
         return view
     }()
-    
-    // MARK: Methods
+}
+
+// MARK: Configuration
+extension ChartView {
     func configure(with data: [ChartsView.Data], linesCount: Int, chartTopOffset: CGFloat) {
         layoutIfNeeded()
         drawDashLines(count: linesCount)
         drawChart(with: data, topOffset: chartTopOffset)
     }
-}
-
-// MARK: Configuration
-extension ChartView {
+    
     override func setupViews() {
         super.setupViews()
         

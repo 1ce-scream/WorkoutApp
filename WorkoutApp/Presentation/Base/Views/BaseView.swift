@@ -18,11 +18,11 @@ class BaseView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(frame: .zero)
     }
 }
 
-// MARK: Methods
+// MARK: Configuration methods
 @objc extension BaseView {
     func setupViews() {}
     func setupConstraints() {}
