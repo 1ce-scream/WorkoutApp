@@ -14,7 +14,9 @@ final class TabBarController: UITabBarController {
         
         configureAppearance()
         configureControllers()
-//        switchTo(tab: .progress)
+        
+        // MARK: For comfort
+//        switchTo(tab: .session)
     }
     
     required init?(coder: NSCoder) {
@@ -29,8 +31,12 @@ final class TabBarController: UITabBarController {
 // MARK: Private methods
 private extension TabBarController {
     private func configureAppearance() {
+        let appearance = UITabBarAppearance()
+        appearance.configureWithDefaultBackground()
+        
         tabBar.tintColor = Resources.Colors.active
         tabBar.barTintColor = Resources.Colors.inactive
+        tabBar.scrollEdgeAppearance = appearance
         tabBar.backgroundColor = Resources.Colors.navigationBackground
         tabBar.layer.borderColor = Resources.Colors.separator.cgColor
         tabBar.layer.borderWidth = Constants.Common.borderWidth
